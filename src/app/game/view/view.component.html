@@ -1,1 +1,32 @@
-<p>view works!</p>
+<div class="word-guess-view">
+  <h2>guess</h2>
+  <div class="word-guess-word">
+
+    <form [formGroup]="wordForm" (submit)="guessWord()">
+      <input type="text" name="l1" formControlName="l1" maxlength="1" />
+      <input type="text" name="l2" formControlName="l2" maxlength="1" />
+      <input type="text" name="l3" formControlName="l3" maxlength="1" />
+      <input type="text" name="l4" formControlName="l4" maxlength="1" />
+      <input type="text" name="l5" formControlName="l5" maxlength="1" />
+    </form>
+
+  </div>
+
+  <div class="letters">
+    <ul class="letters-first-row">
+      @for (letter of "QWERTYUIOP"; track $index) {
+      <li>{{letter}}</li>
+      }
+    </ul>
+    <ul class="letters-second-row">
+      @for (letter of "ASDFGHJKL"; track $index) {
+      <li>{{letter}}</li>
+      }
+    </ul>
+    <ul class="letters-third-row">
+      @for (letter of "ZXCVBNM"; track $index) {
+      <li>{{letter}}</li>
+      }
+    </ul>
+  </div>
+</div>

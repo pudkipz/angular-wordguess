@@ -1,0 +1,39 @@
+.word-guess-word input {
+    width: 24px;
+    height: 28px;
+    font-family: monospace;
+    font-size: 24px;
+    /* justify-content: center;  not really doing anything */
+    margin-left: 4px;
+}
+
+.word-guess-word {
+    margin-left: 10%;
+}
+
+.word-guess-view {
+    font-family: monospace;
+    font-size: 24px;
+}
+
+.letters {}
+
+.letters ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.letters li {
+    border: 1px solid black;
+    padding: 8px;
+    margin: 4px;
+    /* font-size: ; */
+}
+
+.letters-second-row {
+    padding-left: 4%;
+}
+
+.letters-third-row {
+    padding-left: 6%;
+}
