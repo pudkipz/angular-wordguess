@@ -23,15 +23,14 @@ export class ViewComponent {
     })
   }
 
-  handleSubmit() {
-
-  }
-
   getGuessedWords(): string[] {
     return this.gameService.getGuessedWords();
   }
 
   guessWord() {
-    console.log('guess word')
+    let w = this.wordForm.value;
+    this.gameService.guessWord(`${w['l1']}${w['l2']}${w['l3']}${w['l4']}${w['l5']}`)
+    this.wordForm.reset()
+    // console.log(this.gameService.gameState)
   }
 }
