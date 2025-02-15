@@ -1,5 +1,20 @@
 <div class="word-guess-view">
   <h2>guess</h2>
+
+  <div class="guessed-list">
+    <ul>
+      @for (word of getGuessedWords(); track $index) {
+      <li>
+        <ul class="guessed-word">
+          @for (letter of word; track $index) {
+          <li class="guessed-word-letter">{{letter}}</li>
+          }
+        </ul>
+      </li>
+      }
+    </ul>
+  </div>
+
   <div class="word-guess-word">
 
     <form [formGroup]="wordForm" (submit)="guessWord()">
@@ -31,11 +46,4 @@
     </ul>
   </div>
 
-  <div class="guessed-list">
-    <ul>
-      @for (word of getGuessedWords(); track $index) {
-      <li>{{word}}</li>
-      }
-    </ul>
-  </div>
 </div>

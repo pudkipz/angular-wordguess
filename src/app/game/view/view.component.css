@@ -1,11 +1,34 @@
-.word-guess-word input {
-
-    width: 24px;
+.guessed-word-letter {
+    width: 28px;
     height: 28px;
     font-family: monospace;
     font-size: 24px;
+    border: 1px solid black;
+    margin-left: 2px;
+    /* float: center; */
+}
+
+.guessed-list ul {
+    list-style-type: none;
+}
+
+.guessed-word {
+    /* width: 24px;
+    height: 28px; */
+    margin-left: 7%;
+    padding: 0;
+    display: flex;
+    margin-bottom: 4px
+}
+
+.word-guess-word input {
+    width: 24px;
+    height: 28px;
+    border: 1px solid black;
+    font-family: monospace;
+    font-size: 24px;
+    margin-left: 2px;
     /* justify-content: center;  not really doing anything*/
-    margin-left: 4px;
 }
 
 .word-guess-word {
