@@ -3,11 +3,11 @@
   <div class="word-guess-word">
 
     <form [formGroup]="wordForm" (submit)="guessWord()">
-      <input type="text" name="l1" formControlName="l1" maxlength="1" />
-      <input type="text" name="l2" formControlName="l2" maxlength="1" />
-      <input type="text" name="l3" formControlName="l3" maxlength="1" />
-      <input type="text" name="l4" formControlName="l4" maxlength="1" />
-      <input type="text" name="l5" formControlName="l5" maxlength="1" />
+      <input #fL1 type="text" name="l1" formControlName="l1" maxlength="1" (keypress)="fL2.focus()" />
+      <input #fL2 type="text" name="l2" formControlName="l2" maxlength="1" (keypress)="fL3.focus()" />
+      <input #fL3 type="text" name="l3" formControlName="l3" maxlength="1" (keypress)="fL4.focus()" />
+      <input #fL4 type="text" name="l4" formControlName="l4" maxlength="1" (keypress)="fL5.focus()" />
+      <input #fL5 type="text" name="l5" formControlName="l5" maxlength="1" (keypress)="fL1.focus()" />
     </form>
 
   </div>

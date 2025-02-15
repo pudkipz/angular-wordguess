@@ -1,9 +1,10 @@
 .word-guess-word input {
+
     width: 24px;
     height: 28px;
     font-family: monospace;
     font-size: 24px;
-    /* justify-content: center;  not really doing anything */
+    /* justify-content: center;  not really doing anything*/
     margin-left: 4px;
 }
 
