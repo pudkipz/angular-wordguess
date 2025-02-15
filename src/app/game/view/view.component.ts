@@ -23,13 +23,51 @@ export class ViewComponent {
     })
   }
 
+  typeOfLetter(letter: string) {
+    let guessedWords = this.gameService.getGuessedWords();
+    let color = 'gray';
+    for (let word of guessedWords) {
+      for (let index = 0; index < word.length; index++) {
+        let c = (word[index] == letter.toLowerCase()) && this.typeOfLetterInWord(word[index], index);
+        // console.log(c)
+        switch (c) {
+          case 'green':
+            return 'green'
+          case 'yellow':
+            color = 'yellow';
+            break;
+          case 'gray':
+            color = 'red';  // this is a bit confusing but makes sense
+        }
+      }
+    }
+    // console.log(color)
+    return color;
+  }
+
+  typeOfLetterInWord(letter: string, index: number): string {
+    if (this.gameService.secret[index] == letter)
+      return 'green';
+    else if (this.gameService.secret.includes(letter))
+      return 'yellow';
+    else
+      return 'gray';
+  }
+
   getGuessedWords(): string[] {
     return this.gameService.getGuessedWords();
   }
 
   guessWord() {
     let w = this.wordForm.value;
-    this.gameService.guessWord(`${w['l1']}${w['l2']}${w['l3']}${w['l4']}${w['l5']}`)
+    let word = `${w['l1']}${w['l2']}${w['l3']}${w['l4']}${w['l5']}`;
+    let wordL = [w['l1'], w['l2'], w['l3'], w['l4'], w['l5']];
+    // console.log(word)
+    for (let l of wordL) {
+      if (!'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.includes(l)) return;
+    }
+
+    this.gameService.guessWord(word)
     this.wordForm.reset()
     // console.log(this.gameService.gameState)
   }

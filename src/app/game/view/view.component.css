@@ -1,11 +1,25 @@
-.guessed-word-letter {
+.guessed-word li {
     width: 28px;
     height: 28px;
     font-family: monospace;
     font-size: 24px;
     border: 1px solid black;
     margin-left: 2px;
+    color: white;
+    font-weight: 800;
     /* float: center; */
+}
+
+.guessed-word-letter-gray {
+    background-color: gray;
+}
+
+.guessed-word-letter-yellow {
+    background-color: goldenrod;
+}
+
+.guessed-word-letter-green {
+    background-color: green;
 }
 
 .guessed-list ul {
@@ -51,7 +65,9 @@
     border: 1px solid black;
     padding: 8px;
     margin: 4px;
-    /* font-size: ; */
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
 }
 
 .letters-second-row {
@@ -60,4 +76,20 @@
 
 .letters-third-row {
     padding-left: 6%;
+}
+
+.letters-gray {
+    background-color: gray;
+}
+
+.letters-yellow {
+    background-color: goldenrod;
+}
+
+.letters-green {
+    background-color: green;
+}
+
+.letters-red {
+    background-color: crimson;
 }
