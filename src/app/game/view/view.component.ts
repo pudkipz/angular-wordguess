@@ -23,6 +23,14 @@ export class ViewComponent {
     })
   }
 
+  handleSubmit() {
+
+  }
+
+  getGuessedWords(): string[] {
+    return this.gameService.getGuessedWords();
+  }
+
   guessWord() {
     console.log('guess word')
   }

@@ -8,6 +8,7 @@
       <input #fL3 type="text" name="l3" formControlName="l3" maxlength="1" (keypress)="fL4.focus()" />
       <input #fL4 type="text" name="l4" formControlName="l4" maxlength="1" (keypress)="fL5.focus()" />
       <input #fL5 type="text" name="l5" formControlName="l5" maxlength="1" (keypress)="fL1.focus()" />
+      <button (click)="handleSubmit()">Submit</button>
     </form>
 
   </div>
@@ -26,6 +27,14 @@
     <ul class="letters-third-row">
       @for (letter of "ZXCVBNM"; track $index) {
       <li>{{letter}}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="guessed-list">
+    <ul>
+      @for (word of getGuessedWords(); track $index) {
+      <li>{{word}}</li>
       }
     </ul>
   </div>
