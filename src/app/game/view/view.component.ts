@@ -13,6 +13,15 @@ export class ViewComponent {
   wordForm: FormGroup;
   wordFormBuilder = inject(FormBuilder);
 
+  handle(keyCode: number, next: HTMLInputElement, prev: HTMLInputElement) {
+    console.log(keyCode)
+    if (keyCode >= 65 && keyCode <= 90) {
+      next.focus();
+    } else if (keyCode == 8) {
+      prev.focus()
+    }
+  }
+
   constructor() {
     this.wordForm = this.wordFormBuilder.group({
       l1: ['', Validators.required],
