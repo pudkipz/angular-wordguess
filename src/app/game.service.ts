@@ -20,7 +20,7 @@ export class GameService {
   }
 
   guessWord(word: string): boolean {
-    if (this.guessedWords.includes(word)) {
+    if (this.guessedWords.includes(word) || !WORDS.includes(word)) {
       return false;
     }
 
