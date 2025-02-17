@@ -67,8 +67,8 @@ export class ViewComponent {
       if (!'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.includes(l)) return;
     }
 
-    this.gameService.guessWord(word)
-    this.wordForm.reset()
+    if (this.gameService.guessWord(word))
+      this.wordForm.reset()
     // console.log(this.gameService.gameState)
   }
 }
