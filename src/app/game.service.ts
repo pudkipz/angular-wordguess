@@ -15,8 +15,8 @@ export class GameService {
 
   newGame() {
     this.secret = WORDS[Math.floor(Math.random() * WORDS.length)];
-    console.log(this.secret)
-    // this.secret = 'helpp';
+    this.guessedWords = [];
+    this.gameState = 'active';
   }
 
   guessWord(word: string): boolean {

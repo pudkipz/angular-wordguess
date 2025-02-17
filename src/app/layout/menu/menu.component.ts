@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GameService } from '../../game.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+  gameService = inject(GameService);
 
+  handleNewGameBtn() {
+    this.gameService.newGame();
+  }
 }
